@@ -83,11 +83,11 @@ int main(int argc, char **argv) {
         // Choose which lifeguard will be fired
         lifeguard_t fired_lifeguard = lifeguards[i];
         unsigned int curr_max = 0;
-        for (unsigned int k = 0; k < NUM_SHIFTS; k++) {
-            unsigned int num_on_duty = lifeguards_on_duty[k];
+        for (unsigned int j = 0; j < NUM_SHIFTS; j++) {
+            unsigned int num_on_duty = lifeguards_on_duty[j];
             // Decrement the number of lifeguards on duty if the current shift
             // will be affected by the fired lifeguard
-            if (k >= fired_lifeguard.start && k < fired_lifeguard.end) {
+            if (j >= fired_lifeguard.start && j < fired_lifeguard.end) {
                 num_on_duty--;
             }
             // Increment the amount of time covered
